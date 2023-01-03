@@ -1,3 +1,9 @@
-export default function getStudentIdsSum (lst) {
-  return lst.reduce((counter, currentObj) => counter + currentObj.id, 0)
+export default function getStudentIdsSum(students) {
+  if (students instanceof Array) {
+    return students.reduce(
+      (prevStudent, curStudent) => prevStudent.id || prevStudent + curStudent.id,
+      0,
+    );
+  }
+  return 0;
 }
